@@ -26,11 +26,11 @@ node {
                         sh "mvn test -Punit"
                     } catch(err) {
                         step([$class: 'JUnitResultArchiver', testResults: 
-                          '**/target/surefire-reports/TEST-*UnitTest.xml'])
+                          '**/target/surefire-reports/TEST-*.xml'])
                         throw err
                     }
                    step([$class: 'JUnitResultArchiver', testResults: 
-                     '**/target/surefire-reports/TEST-*UnitTest.xml'])
+                     '**/target/surefire-reports/TEST-*.xml'])
              }
 
 }
